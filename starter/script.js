@@ -174,7 +174,7 @@ function generatePassword() {
   const options = getPasswordOptions();
   if (!options) return null;
 
-  const allowedCharacters = [];
+  let allowedCharacters = [];
   if (options.includeLowercase) allowedCharacters = allowedCharacters.concat(lowerCasedCharacters);
   if (options.includeUppercase) allowedCharacters = allowedCharacters.concat(upperCasedCharacters);
   if (options.includeNumbers) allowedCharacters = allowedCharacters.concat(numericCharacters);
@@ -188,3 +188,8 @@ function generatePassword() {
 
   return password;
 }
+
+document.getElementById('generate').addEventListener('click', function() {
+  var password = generatePassword();
+  document.getElementById('password').value = password;
+});
