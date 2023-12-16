@@ -169,4 +169,24 @@ function getPasswordOptions() {
   };
 }
 
-getPasswordOptions();
+
+function generatePassword() {
+  const options = getPasswordOptions();
+  if (!options) return null;
+
+  const allowedCharacters = [];
+  if (options.includeLowercase) allowedCharacters = allowedCharacters.concat(lowerCasedCharacters);
+  if (options.includeUppercase) allowedCharacters = allowedCharacters.concat(upperCasedCharacters);
+  if (options.includeNumbers) allowedCharacters = allowedCharacters.concat(numericCharacters);
+  if (options.includeSpecial) allowedCharacters = allowedCharacters.concat(specialCharacters);
+
+  let password = "";
+  for (let i = 0; i < options.length; i++) {
+    const randomIndex = Math.floor(Math.random() * allowedCharacters.length);
+    password += allowedCharacters[randomIndex];
+  }
+
+  return password;
+}
+
+generatePassword();
