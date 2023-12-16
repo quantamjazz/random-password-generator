@@ -188,5 +188,3 @@ function generatePassword() {
 
   return password;
 }
-
-generatePassword();
