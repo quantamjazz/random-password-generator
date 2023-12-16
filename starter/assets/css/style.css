@@ -13,8 +13,9 @@ body,
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: #f9fbfd;
+  text-align: center;
 }
 
 .wrapper {
@@ -46,7 +47,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: black;
   height: 2px;
 }
 
@@ -74,7 +75,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: mediumorchid;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
