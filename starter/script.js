@@ -126,19 +126,36 @@ const upperCasedCharacters = [
 ];
 
 function getPasswordOptions() {
-  const length = parseInt(prompt("How many characters would you like your password to contain? Enter a number between 8 and 128."));
+  const length = parseInt(
+    prompt(
+      "How many characters would you like your password to contain? Enter a number between 8 and 128."
+    )
+  );
 
   if (length < 8 || length > 128 || isNaN(length)) {
     alert("Password length must be between 8 and 128 characters");
     return null;
   }
 
-  const includeLowercase = confirm("Click OK to confirm including lowercase characters.");
-  const includeUppercase = confirm("Click OK to confirm including uppercase characters.");
-  const includeNumbers = confirm("Click OK to confirm including numeric characters.");
-  const includeSpecial = confirm("Click OK to confirm including special characters.");
+  const includeLowercase = confirm(
+    "Click OK to confirm including lowercase characters. Click Cancel to exclude lowercase characters."
+  );
+  const includeUppercase = confirm(
+    "Click OK to confirm including uppercase characters. Click Cancel to exclude uppercase characters."
+  );
+  const includeNumbers = confirm(
+    "Click OK to confirm including numeric characters. Click Cancel to exclude numeric characters."
+  );
+  const includeSpecial = confirm(
+    "Click OK to confirm including special characters. Click Cancel to exclude special characters."
+  );
 
-  if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial) {
+  if (
+    !includeLowercase &&
+    !includeUppercase &&
+    !includeNumbers &&
+    !includeSpecial
+  ) {
     alert("Must select at least one character type");
     return null;
   }
@@ -148,9 +165,8 @@ function getPasswordOptions() {
     includeLowercase: includeLowercase,
     includeUppercase: includeUppercase,
     includeNumbers: includeNumbers,
-    includeSpecial: includeSpecial
+    includeSpecial: includeSpecial,
   };
+}
 
-  }
-
-  getPasswordOptions();
+getPasswordOptions();
